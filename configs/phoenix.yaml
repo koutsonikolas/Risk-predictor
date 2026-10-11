@@ -1,0 +1,24 @@
+project_name: earthrisk-ai
+aoi_name: greater_phoenix
+analysis_crs: EPSG:4326
+hex_resolution: 8
+years:
+  start: 2018
+  end: 2024
+season_months: [6, 7, 8, 9]
+prediction_horizon_months: 12
+score_refresh_months: 6
+baseline_years: [2018, 2019, 2020]
+inputs:
+  aoi_path: data/raw/aoi/greater_phoenix.geojson
+  buildings_path: data/raw/buildings/buildings.geojson
+earth_engine:
+  use_high_volume_endpoint: false
+  landsat_scale: 30
+  nlcd_scale: 30
+  dynamic_world_scale: 10
+  era5_scale: 11132
+alerts:
+  risk_score_threshold: 65.0
+  probability_threshold: 0.60
+  min_building_count: 1
